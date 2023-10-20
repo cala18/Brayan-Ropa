@@ -24,11 +24,11 @@ public class BlockchainController : BaseController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<Cliente>>> Get()
-    {
-        var blockchain = await _unitOfWork.Cargo.GetAllAsync();
-        return _mapper.Map<List<CargoDto>>(*);
-    }
+    // public async Task<ActionResult<IEnumerable<Cliente>>> Get()
+    // {
+    //     var blockchain = await _unitOfWork.Cargo.GetAllAsync();
+    //     return _mapper.Map<List<CargoDto>>(*);
+    // }
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
