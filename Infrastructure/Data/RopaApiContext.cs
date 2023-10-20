@@ -12,6 +12,9 @@ namespace Infrastructure.Data
 {
     public class RopaApiContext : DbContext
     {
+        private DbSet<Pais> pais;
+        private DbSet<Cargo> cargos;
+
         public RopaApiContext(DbContextOptions options) : base(options)
         {
         }
@@ -20,8 +23,8 @@ namespace Infrastructure.Data
         {
         }
 
-        DbSet<Pais> Paises { get; set; }
-        DbSet<Cargo> Cargos { get; set; }
+        DbSet<Pais> Pais { get => pais; set => pais = value; }
+        DbSet<Cargo> Cargos { get => cargos; set => cargos = value; }
         DbSet<Cliente> Clientes { get; set; }
         DbSet<Color> Colores { get; set; }
         DbSet<Departamento> Departamentos { get; set; }
