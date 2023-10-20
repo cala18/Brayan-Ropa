@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class Empleado : BaseEntity
+namespace Core.Entities
 {
-    public int EmpleadoId { get; set; }
-    public int IdEmp { get; set; }
-    public string NombreEmpleado { get; set; }
-    public Cargo Cargos { get; set; }
-    public DateOnly FechaIngresoEmpleado { get; set; }
-    public Municipio Municipios { get; set; }
+    public class Empleado : BaseEntity
+    {
+        public int IdEmp;
+        public string Nombre;
+        public int IdCargo;
+        public Cargo Cargo;
+        public DateTime FechaIngreso;
+        public int IdMunicipio;
+        public Municipio Municipio;
 
+        public ICollection<Venta> Ventas;
+        public ICollection<Orden> Ordenes;
+
+    }
 }

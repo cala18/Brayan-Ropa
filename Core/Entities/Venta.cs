@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class Venta : BaseEntity
+namespace Core.Entities
 {
-    public int VentaId { get; set; }
-    public DateOnly FechaVenta { get; set; }
-    public Empleado Empleados { get; set; }
-    public Cliente Clientes { get; set; }
-    public FormaPago FormaPagos { get; set; }
+    public class Venta : BaseEntity
+    {
+        public DateTime Fecha;
+        public int IdEmpelado;
+        public Empleado Empleado;
+        public int IdCliente;
+        public Cliente Cliente;
+        public int IdFormaPago;
+        public FormaPago FormaPago;
+
+        public ICollection<DetalleVenta> DetalleVentas;
+    }
 }

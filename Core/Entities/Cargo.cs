@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Entities;
-
 public class Cargo : BaseEntity
 {
-    public int CargoId { get; set; }
-    public string DescripcionCargo { get; set; }
-    public double SueldoBase { get; set; }
+    public string Descripcion;
+    public float SueldoBase;
+
+    public ICollection<Empleado> Empleados { get; set; }
 }

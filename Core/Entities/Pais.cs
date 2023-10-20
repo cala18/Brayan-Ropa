@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class Pais : BaseEntity
+namespace Core.Entities
 {
-    [Required]
-    public int PaisId { get; set; }
-    public string NombrePais { get; set; }
+    public class Pais : BaseEntity
+    {
+        public string Nombre;
 
+        public ICollection<Departamento> Departamentos;
+    }
 }

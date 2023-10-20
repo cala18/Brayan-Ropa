@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class InsumoProveedor : BaseEntity
+namespace Core.Entities
 {
-     public ICollection<Insumo> Insumos { get; set; }
-     public ICollection<Proveedor> Proveedores { get; set; }
+    public class InsumoProveedor : BaseEntity
+    {
+        public int IdInsumo;
+        public Insumo Insumo;
+
+        public int IdProveedor;
+
+        public Proveedor Proveedor;
+
+    }
 }

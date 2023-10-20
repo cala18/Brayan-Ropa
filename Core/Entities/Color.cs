@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class Color : BaseEntity
+namespace Core.Entities
 {
-    public int ColorId { get; set; }
-    public string DescripcionColor { get; set; }
+    public class Color : BaseEntity
+    {
+        public string Descripcion;
+        public ICollection<DetalleOrden> DetalleOrdenes;
+
+    }
 }

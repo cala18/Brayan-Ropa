@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class Prenda : BaseEntity
+namespace Core.Entities
 {
-    public int PrendaId{ get; set; }
-    public int IdPrenda { get; set; }
-    public string NombrePrenda { get; set; }
-    public double ValorUnitarioPrendaCop { get; set; }
-    public double ValorUnitarioPrendaUsd { get; set; }
-    public Estado Estados { get; set; }
-    public TipoProteccion TipoProtecciones { get; set; }
-    public Genero Generos { get; set; }
-    
+    public class Prenda : BaseEntity
+    {
+        public int IdPrenda;
+        public string Nombre;
+        public float ValorUnitCop;
+        public float ValorUnitUsd;
+        public int IdEstado;
+        public Estado Estado;
+        public int IdTipoProteccion;
+        public TipoProteccion TipoProteccion;
+        public int IdGenero;
+        public Genero Genero;
+        public ICollection<InsumoPrenda> InsumoPrendas;
+        public ICollection<Inventario> Inventarios;
+        public ICollection<DetalleOrden> DetalleOrdenes;
+
+    }
 }

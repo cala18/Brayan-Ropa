@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class Insumo : BaseEntity
+namespace Core.Entities
 {
-    public int InsumoId { get; set; }
-    public string NombreInsumo { get; set; }
-    public double ValorUnitarioInsumo { get; set; }
-    public int StockMinimo { get; set; }
-    public int StockMaximo { get; set; }
+    public class Insumo : BaseEntity
+    {
+        public string Nombre;
+        public float ValorUnit;
+        public int StockMin;
+        public int StockMax;
 
+        public ICollection<InsumoProveedor> InsumoProveedores;
+        public ICollection<InsumoPrenda> InsumoPrendas;
+
+    }
 }

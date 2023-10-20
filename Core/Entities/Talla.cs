@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities;
-
-public class Talla : BaseEntity
+namespace Core.Entities
 {
-    public int TallaId { get; set; }
-    public string DescripcionTalla { get; set; }
+    public class Talla : BaseEntity
+    {
+        public string Descripcion;
+
+        public ICollection<DetalleVenta> DetalleVentas;
+        public ICollection<InventarioTalla> InventarioTallas;
+
+    }
 }
